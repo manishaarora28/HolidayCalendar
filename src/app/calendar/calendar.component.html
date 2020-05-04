@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="month_heading">
+        <span [ngClass]="{'disabled':monthNum == 1}"><i class="fa fa-arrow-circle-left" (click)="previousMonth()"></i></span><h3>{{ currentMonthYear }}</h3><span [ngClass]="{'disabled':monthNum == 12}"><i class="fa fa-arrow-circle-right" (click)="nextMonth()"></i></span>
+    </div>
+
+<table class="table table-responsive">
+    <thead>
+<tr>
+    <th scope="col" *ngFor="let day of days">
+{{ day.val }}
+    </th>
+</tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td *ngFor="let num of dayNum">
+                <ng-container>
+                    <span>{{ num.val }} </span>
+                    <span class="text-center tooltip" value="Holiday" [ngClass]="{'fontred':num.optional==false}" *ngIf="!num.optional">{{num.day}}</span>
+                    <span class="text-center tooltip" value="Optional" [ngClass]="{'fontblack':num.optional==true}" *ngIf="num.optional">{{num.day}}</span>
+
+                </ng-container>
+             </td>
+        </tr>
+        
+    </tbody>
+    
+</table>
+<div class="optionalLeaves">
+    <p><b>*SUBJECT TO VISBILITY OF MOON</b></p>
+    <br>
+    <h4>
+        Additional Optional Leaves
+    </h4>
+ <span>Your Birthday</span>
+<span>Your Spouse's Birthday</span>
+<span>Your Child's Birthday</span>
+<span>Your Anniversary</span>
+</div>
+</div>

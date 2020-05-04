@@ -1,0 +1,104 @@
+.month_heading{    
+    text-align: center;
+    span{
+        display: inline-block;
+        padding: 10px;
+        cursor: pointer;
+        i{            
+        font-size: 20px;
+        }
+    }
+    span.disabled{      
+        cursor:not-allowed;     
+        i{
+            pointer-events: none;
+        }
+    }
+    h3{
+        font-size: 28px;
+        display: inline-block;
+        width: 210px;
+    }
+}
+
+table{
+    background-color: #f5f5f5;
+    thead{
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        tr{
+            background-color: black;
+            color: white;
+            th{
+                text-align: center;
+                border-right:.5px solid black;
+                width: 164px;
+            }
+        }
+    }
+    
+    tbody{
+        display: block;
+        tr{
+            td{
+                border:.5px solid black;
+                border-top:none;
+                display: inline-block;
+                width: 162.6px;
+                height: 42px;
+                span:first-of-type{
+                    text-align: left;
+                    display: inline-block;
+                }
+                span:last-of-type{                    
+                    font-size: 13px;
+                    font-weight: bold;
+                    display: inline-block;
+                    line-height: initial;
+                    opacity: 1;
+                    text-align: center;
+                    width: 130px;
+                }
+                span:last-of-type.tooltip:hover:before{
+                    border: solid;
+                    border-color: rgb(249, 166, 52) transparent;
+                    border-width: 6px 6px 0 6px;
+                    top: -5px;
+                    content: "";
+                    left: 50%;
+                    position: absolute;
+                    z-index: 99;
+                }
+                span:last-of-type.tooltip:hover:after{
+                    background: rgb(249, 166, 52);
+                    border-radius: 5px;
+                    top: -30px;
+                    color: #fff;
+                    content: attr(value);
+                    left: 20%;
+                    padding: 5px 15px;
+                    position: absolute;
+                    z-index: 98;
+                    width: 90px;
+                }
+                span:last-of-type.fontred{
+                    color:#1d5471;
+                }
+                span:last-of-type.fontblack{
+                    color:black;
+                }
+            }
+        }
+    }
+
+}
+.optionalLeaves{
+    h4{
+        font-weight: bold;
+    }
+    span{
+display: block;
+    }
+}
