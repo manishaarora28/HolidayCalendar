@@ -224,7 +224,7 @@ export class CalendarComponent implements OnInit {
 
   addfile() {
       this.arrayList = [];
-      let url = "/assets/files/PL_Holiday Calendar 2020.xlsx";
+      let url = "/assets/files/PL_Holiday_Calendar_2020.xlsx";
       let req = new XMLHttpRequest();
       req.open("GET", url, true);
       req.responseType = "arraybuffer";
