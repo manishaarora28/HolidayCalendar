@@ -204,7 +204,7 @@ export class CalendarComponent implements OnInit {
   previousMonth() {
       this.monthNum = this.monthNum - 1;
       var previousMonth = new Date(this.yearInput, this.monthNum, 1).getMonth();     
-      this.currentMonthYear = moment(previousMonth.toString()).format('MMMM') + `, ` + this.yearInput;
+      this.currentMonthYear = moment(previousMonth.toString(),'M').format('MMMM') + `, ` + this.yearInput;
       this.monthInput = this.monthNum - 1;
       this.dayNum = [];
       this.calendarDays();
@@ -216,7 +216,7 @@ export class CalendarComponent implements OnInit {
       if (this.monthNum == 12) {
           nextMonth = 12;
       }
-      this.currentMonthYear = moment(nextMonth.toString()).format('MMMM') + `, ` + this.yearInput;
+      this.currentMonthYear = moment(nextMonth.toString(),'M').format('MMMM') + `, ` + this.yearInput;
       this.monthInput = this.monthNum - 1;
       this.dayNum = [];
       this.calendarDays();
