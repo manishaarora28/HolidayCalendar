@@ -55,6 +55,7 @@ export class CalendarComponent implements OnInit {
   listOfDates = [];
   listOfOptionalDates = [];
   holidays = [];
+  starVisible :boolean = false;
   
   constructor() {}
 
@@ -94,6 +95,9 @@ export class CalendarComponent implements OnInit {
                   optional: true
               });
           }
+      });
+      this.holidays.forEach(element => {
+        this.checkForStar(element.holiday);        
       });
 
       // sort by date
@@ -149,6 +153,7 @@ export class CalendarComponent implements OnInit {
                       day: '',
                       optional: false
                   });
+                  this.starVisible = false;
               }
           }
       } else {
@@ -196,6 +201,7 @@ export class CalendarComponent implements OnInit {
                       day: '',
                       optional: false
                   });
+                  this.starVisible = false;
               }
           }
       }
@@ -290,5 +296,16 @@ export class CalendarComponent implements OnInit {
     this.holidays.sort(function (a, b) {
         return a.date - b.date;
     });
+  }
+
+  checkForStar(val){
+      if(val.indexOf('*')>-1){
+          this.starVisible = true;
+          
+      }
+      else{
+          this.starVisible = false;
+          
+      }
   }
 }
